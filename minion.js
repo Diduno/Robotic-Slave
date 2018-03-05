@@ -5,6 +5,7 @@ var rgbHex = require("rgb-hex");
 logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
     colorize: true
+});
 logger.level = 'debug';
 // Initialize Discord Bot
 const bot = new Discord.Client({
