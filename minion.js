@@ -52,9 +52,7 @@ bot.on('message', message => {
                 message.channel.send(url);
             break;
             case "cat":
-                message.channel.send("`Have a pussy!`", {
-                    file: new Discord.Attachment('https://lorempixel.com/500/500/cats/', 'cat.jpg')
-                });
+                message.channel.send("`Cats are ugly`");
             break;
             case "deleteroles":
                 for (var role of message.guild.roles) {
