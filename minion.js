@@ -46,10 +46,8 @@ bot.on('message', message => {
             case 'minion':
                 randomPuppy(subreddit)
                     .then(url => {
-                console.log(url);
-            })
-        
                 message.channel.send(url);
+            });
             break;
             case "cat":
                 message.channel.send("`Cats are ugly`");
