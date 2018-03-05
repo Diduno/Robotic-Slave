@@ -5,7 +5,9 @@
     "main": "bot.js",
     "author": "Dan",
     "dependencies": {
+        "ajax-request": "^1.2.3",
         "discord.io": "^2.5.3",
+        "get-json": "^1.0.0",
         "random-hex": "^1.0.2",
         "rgb-hex": "^2.1.0",
         "winston": "^2.4.0"
