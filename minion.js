@@ -53,7 +53,7 @@ bot.on('message', message => {
                 message.channel.send("`Succesfully deleted all unused roles!`");
             break;
             case "minion":
-                msg.channel.send($.getJSON("https://www.reddit.com/r/wackytictacs/random.json")).0.data.children.0.data.url
+                msg.channel.send($.getJSON("https://www.reddit.com/r/wackytictacs/random.json").0.data.children.0.data.url)
             // Just add any case commands if you want to..
          }
      }
