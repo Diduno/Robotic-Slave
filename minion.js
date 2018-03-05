@@ -51,8 +51,12 @@ bot.on('message', message => {
                 }
                 message.channel.send("`Succesfully deleted all unused roles!`");
             break;
+            case "minion":
+
+
             // Just add any case commands if you want to..
          }
      }
 });
+
 bot.login(require("./token.json"));
