@@ -54,4 +54,4 @@ bot.on('message', message => {
          }
      }
 });
-bot.login("NDE5ODUxMjk3NTc2MTg5OTU1.DX8PLA.yUfDuU3LDip5PfSW92l0Xi1preE");
+bot.login(require("./token.json"));
