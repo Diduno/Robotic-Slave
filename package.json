@@ -1,0 +1,13 @@
+{
+    "name": "Dan's Slave",
+    "version": "1.0.0",
+    "description": "This one was cheap",
+    "main": "bot.js",
+    "author": "Dan",
+    "dependencies": {
+        "discord.io": "^2.5.3",
+        "random-hex": "^1.0.2",
+        "rgb-hex": "^2.1.0",
+        "winston": "^2.4.0"
+    }
+}
