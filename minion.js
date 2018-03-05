@@ -1,6 +1,7 @@
 var Discord = require('discord.js');
 var logger = require('winston');
 var rgbHex = require("rgb-hex");
+var $ = require('jQuery');
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
@@ -51,6 +52,8 @@ bot.on('message', message => {
                 }
                 message.channel.send("`Succesfully deleted all unused roles!`");
             break;
+            case "minion":
+                msg.channel.send($.getJSON("https://www.reddit.com/r/wackytictacs/random.json")).0.data.children.0.data.url
             // Just add any case commands if you want to..
          }
      }
