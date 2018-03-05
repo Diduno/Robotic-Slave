@@ -1,6 +1,9 @@
 var Discord = require('discord.js');
 var logger = require('winston');
 var rgbHex = require("rgb-hex");
+var subreddit = "wackytictacs"
+const randomPuppy = require('random-puppy');
+
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
@@ -40,8 +43,16 @@ bot.on('message', message => {
             case 'ping':
                 message.channel.send("`Fuck off m8`");
             break;
+            case 'minion':
+                randomPuppy(subreddit)
+                    .then(url => {
+                message.channel.send(url);
+            });
+            break;
             case "cat":
-                message.channel.send("`Cats are ugly`");
+                message.channel.send("`Have some pussy!`", {
+                    file: new Discord.Attachment('https://lorempixel.com/500/500/cats/', 'cat.jpg')
+                });
             break;
             case "deleteroles":
                 for (var role of message.guild.roles) {
