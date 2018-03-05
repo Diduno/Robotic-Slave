@@ -1,7 +1,6 @@
 var Discord = require('discord.js');
 var logger = require('winston');
 var rgbHex = require("rgb-hex");
-var request = require('ajax-request');
 // Configure logger settings
 logger.remove(logger.transports.Console);
 logger.add(logger.transports.Console, {
@@ -53,12 +52,6 @@ bot.on('message', message => {
                 message.channel.send("`Succesfully deleted all unused roles!`");
             break;
             case "minion":
-                request.download({
-                    url: ' https://www.reddit.com/r/wackytictacs/random.json',
-                    destPath: function(filename) {
-                    return filename;
-                    }
-                }, function(err, res, body, destpath) { });
 
 
             // Just add any case commands if you want to..
