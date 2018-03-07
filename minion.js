@@ -14,6 +14,9 @@ logger.level = 'debug';
 const bot = new Discord.Client({
     autoReconnect: true
 });
+
+var prefix = "!";
+
 bot.on('ready', () =>  {
     bot.user.setStatus("online"); //dnd , online , ldle, invisible
     bot.user.setGame("Hello!"); //sets game
@@ -33,11 +36,11 @@ bot.on("guildMemberAdd", member => {
 bot.on('message', message => {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.content.substring(0, 1) == '!') {
-        var args = message.content.substring(1).split(' ');
+    if (message.content.startsWith('prefix.length')) {
+        var args = message.content.substring(prefix.length).split(' ');
         var cmd = args[0];
        
-        args = args.splice(1);
+        args = args.splice(prefix.length);
         switch(cmd) {
             // !ping
             case 'ping':
