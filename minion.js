@@ -63,6 +63,8 @@ bot.on('message', message => {
                 }
                 message.channel.send("`Succesfully deleted all unused roles!`");
             break;
+            case "eat":
+                message.channel.send("`Eating is for organics.`");
             // Just add any case commands if you want to..
          }
      }
