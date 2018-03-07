@@ -1,7 +1,7 @@
 var Discord = require('discord.js');
 var logger = require('winston');
 var rgbHex = require("rgb-hex");
-var subreddit = "wackytictacs"
+var subreddit = "wackytictacs";
 const randomPuppy = require('random-puppy');
 
 // Configure logger settings
@@ -49,8 +49,8 @@ bot.on('message', message => {
             case 'minion':
                 randomPuppy(subreddit)
                     .then(url => {
-                message.channel.send(url);
-            });
+                        message.channel.send(url);
+                    });
             break;
             case "cat":
                 message.channel.send("`Cats are ugly`");
