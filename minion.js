@@ -1,7 +1,7 @@
-var Discord = require('discord.js');
-var logger = require('winston');
-var rgbHex = require("rgb-hex");
-var subreddit = "wackytictacs";
+const Discord = require('discord.js');
+const logger = require('winston');
+const rgbHex = require("rgb-hex");
+const subreddit = "wackytictacs"
 const randomPuppy = require('random-puppy');
 
 // Configure logger settings
@@ -14,9 +14,6 @@ logger.level = 'debug';
 const bot = new Discord.Client({
     autoReconnect: true
 });
-
-var prefix = "!";
-
 bot.on('ready', () =>  {
     bot.user.setStatus("online"); //dnd , online , ldle, invisible
     bot.user.setGame("Hello!"); //sets game
@@ -36,11 +33,11 @@ bot.on("guildMemberAdd", member => {
 bot.on('message', message => {
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.content.startsWith('prefix.length')) {
-        var args = message.content.substring(prefix.length).split(' ');
+    if (message.content.substring(0, 1) == '!') {
+        var args = message.content.substring(1).split(' ');
         var cmd = args[0];
        
-        args = args.splice(prefix.length);
+        args = args.splice(1);
         switch(cmd) {
             // !ping
             case 'ping':
@@ -49,8 +46,8 @@ bot.on('message', message => {
             case 'minion':
                 randomPuppy(subreddit)
                     .then(url => {
-                        message.channel.send(url);
-                    });
+                message.channel.send(url);
+            });
             break;
             case "cat":
                 message.channel.send("`Cats are ugly`");
@@ -63,8 +60,6 @@ bot.on('message', message => {
                 }
                 message.channel.send("`Succesfully deleted all unused roles!`");
             break;
-            case "eat":
-                message.channel.send("`Eating is for organics.`");
             // Just add any case commands if you want to..
          }
      }
